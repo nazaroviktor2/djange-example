@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'quickstart.apps.QuickstartConfig',
     'drf_spectacular',
+    'django_nose',
+]
+# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+#
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=quickstart',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +139,3 @@ REST_FRAMEWORK = {
     # YOUR SETTINGS
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
-

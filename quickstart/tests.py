@@ -1,7 +1,6 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from rest_framework import status
-from rest_framework.test import APITestCase, APIClient
-from rest_framework.authtoken.models import Token
+from rest_framework.test import APIClient, APITestCase
 
 from quickstart.models import Student
 
@@ -9,15 +8,8 @@ from quickstart.models import Student
 class StudentAPITestCase(APITestCase):
     def setUp(self):
         # Создаем тестовых пользователей
-        self.admin = User.objects.create_user(
-            username='admin',
-            password='adminpass',
-            is_staff=True
-        )
-        self.regular_user = User.objects.create_user(
-            username='user',
-            password='userpass'
-        )
+        self.admin = User.objects.create_user(username='admin', password='adminpass', is_staff=True)
+        self.regular_user = User.objects.create_user(username='user', password='userpass')
 
         # Создаем тестовые данные
         self.student_data = {

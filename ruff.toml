@@ -1,0 +1,37 @@
+target-version = "py310"
+src = ["quickstart", "tutorial"]
+
+line-length = 129
+
+
+[lint]
+select = [
+    # flake8-annotations
+#    "ANN001",
+#    "ANN201",
+#    # pydocstyle
+#    "D102",
+#    "D103",
+    # pycodestyle
+    "E",
+    "W",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # pep8-naming
+    "N",
+]
+
+[lint.extend-per-file-ignores]
+"test_*.py" = ["E501", "ANN001", "ANN201", "D102", "D103"]
+
+[lint.isort]
+known-local-folder = ["app", "tests"]
+
+[format]
+quote-style = "single"

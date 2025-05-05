@@ -2,7 +2,6 @@ from rest_framework import permissions
 
 
 class IsAdminOrReadOnly(permissions.BasePermission):
-
     def has_permission(self, request, view):
         # Разрешаем безопасные методы для всех аутентифицированных пользователей
         if not request.user:

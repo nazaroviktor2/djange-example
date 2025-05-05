@@ -1,10 +1,9 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 
 from quickstart.models import Student
 from quickstart.permissions import IsAdminOrReadOnly
-from quickstart.serializers import UserSerializer, StudentSerializer
+from quickstart.serializers import StudentSerializer, UserSerializer
 
 
 # Create your views here.
@@ -18,4 +17,3 @@ class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all().order_by('name')
     serializer_class = StudentSerializer
     permission_classes = [IsAdminOrReadOnly]
-

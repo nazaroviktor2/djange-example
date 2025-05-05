@@ -24,7 +24,7 @@ pip install coverage
 
 overage run --source='.' manage.py test .
 
-
+pip install ruff
 
 ```python
 INSTALLED_APPS = [
