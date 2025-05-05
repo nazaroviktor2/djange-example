@@ -1,3 +1,9 @@
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+sudo apt update
+
+sudo apt install python3.11-full
+
 pip install Django
 
 pip install djangorestframework
@@ -61,3 +67,4 @@ DATABASES = {
 
 https://www.django-rest-framework.org/topics/documenting-your-api/
 
+https://www.transfernow.net/dl/20250505OJpvvboL
